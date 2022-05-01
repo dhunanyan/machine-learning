@@ -43,14 +43,14 @@ print("\n-----DATA(y)-----")
 print(y)
 
 
-# In[5]:
+# In[ ]:
 
 
 KMeans_lsit=[]
 silhouette_list = []
 
 for k in range (8,13):
-    print(f"\n\\\\\\\\\\\\\\\\\\\\\\\\\\K={k}//////////////")
+    print(f"\n\\\\\\\\\\\\\\\\\\\\\\\\\\KMEANS_K={k}//////////////")
     kmeans = KMeans(n_clusters=k)
     y_pred = kmeans.fit_predict(X)
     silhouette_list.append(silhouette_score(X, kmeans.labels_))
@@ -65,7 +65,7 @@ for k in range (8,13):
     print(silhouette_score(X, kmeans.labels_))
 
 
-# In[6]:
+# In[ ]:
 
 
 file_kmeans_sil_name = "kmeans_sil.pkl"
@@ -82,7 +82,7 @@ print('\n--------------------------------------------------EXERCICE 2-----------
 print(loaded_list)
 
 
-# In[7]:
+# In[ ]:
 
 
 KMeans_10_conf_m = confusion_matrix(y, KMeans_lsit[2])
@@ -95,7 +95,7 @@ for i, arr in enumerate(KMeans_10_conf_m):
 KMeans_10_conf_m_max_index_list_sorted = np.sort(list(dict.fromkeys(KMeans_10_conf_m_max_index_list)))
 
 
-# In[8]:
+# In[ ]:
 
 
 file_kmeans_argmax_name = "kmeans_argmax.pkl"
@@ -112,7 +112,7 @@ print('\n---EXERCICE 5----')
 print(loaded_list)
 
 
-# In[10]:
+# In[ ]:
 
 
 min_dis_list = []
@@ -124,7 +124,7 @@ for i, arr in enumerate(X[:300]):
             min_dis_list.append(dis)
 
 
-# In[20]:
+# In[ ]:
 
 
 min_dis_list_sorted = np.sort(min_dis_list)[:10]
@@ -142,7 +142,7 @@ print('\n-------------------------EXERCICE 6-------------------------------')
 print(loaded_list)
 
 
-# In[21]:
+# In[ ]:
 
 
 s = (min_dis_list_sorted[0] + min_dis_list_sorted[1] + min_dis_list_sorted[2]) / 3
@@ -157,7 +157,7 @@ print('\n-----------------------EPSILON LIST------------------------')
 print(eps_list)
 
 
-# In[24]:
+# In[ ]:
 
 
 dbscan_labels_list = []
@@ -169,7 +169,7 @@ for eps in eps_list:
     dbscan_labels_list.append(np.sort(list(dict.fromkeys(dbscan.labels_))))
 
 
-# In[27]:
+# In[ ]:
 
 
 dbscan_labels_list_len = []
@@ -190,7 +190,7 @@ print('\n-------------------------EXERCICE 8-------------------------------')
 print(loaded_list)
 
 
-# In[48]:
+# In[ ]:
 
 
 print('\n---------------------------------------------CHECKING FILES---------------------------------------------')
